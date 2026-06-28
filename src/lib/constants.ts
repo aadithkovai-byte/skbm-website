@@ -33,7 +33,7 @@ export const SOCIAL_LINKS = {
 };
 
 export const GOOGLE_MAPS_EMBED =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5!2d77.1!3d11.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSri+Kovai+Bhairavaa+Motocrafts!5e0!3m2!1sen!2sin!4v1";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5!2d76.983406!3d10.9976124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859e4695a8b35%3A0xff0b953b7a22e860!2sVespa+And+Aprilia+-+Sri+Kovai+Bhairavaa+Motocrafts!5e0!3m2!1sen!2sin!4v1";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
