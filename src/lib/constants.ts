@@ -79,3 +79,88 @@ export const APRILIA_MODELS = [
     description: "Stripped-back, race-focused, and thrilling. The SR 125 is performance without pretense.",
   },
 ];
+
+export const HERITAGE_TIMELINE = [
+  {
+    year: "1946",
+    title: "The Vespa Is Born",
+    description: "Enrico Piaggio unveils the Vespa in post-war Italy — a revolution on two wheels that would change urban mobility forever.",
+  },
+  {
+    year: "1962",
+    title: "Audrey Hepburn Effect",
+    description: "Roman Holiday makes Vespa the icon of freedom and style. Hollywood meets Italian design.",
+  },
+  {
+    year: "1992",
+    title: "Aprilia Joins Piaggio",
+    description: "Racing heritage merges with Italian craftsmanship. Aprilia's 54 world titles become part of the family.",
+  },
+  {
+    year: "2012",
+    title: "Vespa Reaches India",
+    description: "Piaggio brings the Vespa to Indian roads — premium scootering arrives in a new market.",
+  },
+  {
+    year: "2024",
+    title: "SKBM Opens in Coimbatore",
+    description: "Sri Kovai Bhairavaa Motocrafts becomes Coimbatore's authorized destination for Vespa & Aprilia.",
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    name: "Karthik R.",
+    location: "RS Puram",
+    vehicle: "Vespa SXL 150",
+    quote: "Walking into SKBM felt like walking into a boutique in Milan. The team treated me like family from the test ride to the delivery. My Vespa turns heads everywhere.",
+    rating: 5,
+  },
+  {
+    name: "Divya M.",
+    location: "Saibaba Colony",
+    vehicle: "Vespa VXL 125",
+    quote: "I bought my Vespa from SKBM six months ago. The service has been exceptional — they call to remind me about maintenance and treat my scooter better than I do.",
+    rating: 5,
+  },
+  {
+    name: "Arjun S.",
+    location: "Peelamedu",
+    vehicle: "Aprilia SXR 160",
+    quote: "The SXR is everything I wanted — and SKBM made the experience even better. Genuine parts, factory-trained technicians, and a team that actually knows the bikes.",
+    rating: 5,
+  },
+  {
+    name: "Priya V.",
+    location: "Vadavalli",
+    vehicle: "Vespa ZX",
+    quote: "I'd been eyeing a Vespa for years. SKBM didn't just sell me one — they gave me an experience. The showroom, the test ride, the delivery ceremony — pure class.",
+    rating: 5,
+  },
+];
+
+export const STATS = [
+  { value: 75, suffix: "+", label: "Years of Heritage" },
+  { value: 19, suffix: "M+", label: "Vespas Worldwide" },
+  { value: 54, suffix: "", label: "Aprilia World Titles" },
+  { value: 100, suffix: "+", label: "Countries Globally" },
+];
+
+export const EXPERIENCE_HIGHLIGHTS = [
+  {
+    title: "The Welcome",
+    description: "Step into our showroom and feel the difference. Italian espresso. Considered conversation. No pressure — just passion for the brands we represent.",
+  },
+  {
+    title: "The Test Ride",
+    description: "Take any model for a real ride. Feel the throttle. Sense the build quality. Make the decision with your hands on the bars.",
+  },
+  {
+    title: "The Delivery",
+    description: "Your vehicle is prepared, polished, and presented like the work of art it is. Every delivery is a ceremony — because every Vespa deserves one.",
+  },
+  {
+    title: "The Relationship",
+    description: "After the sale comes the service. Factory-trained technicians, genuine parts, and a team that remembers your name and your bike.",
+  },
+];
