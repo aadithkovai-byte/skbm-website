@@ -1,13 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
-  SITE_NAME,
+  ADDRESS,
+  NAV_LINKS,
   PHONE_PRIMARY,
   PHONE_SECONDARY,
-  EMAIL,
-  ADDRESS,
+  SHOWROOMS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
   SOCIAL_LINKS,
-  HOURS,
-  NAV_LINKS,
 } from "@/lib/constants";
 
 function InstagramIcon() {
@@ -39,32 +41,54 @@ function YoutubeIcon() {
 export default function Footer() {
   return (
     <footer className="bg-matte-black text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Main footer */}
-        <div className="grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="mb-6 flex items-center gap-0.5">
-              {"SKBM".split("").map((letter, i) => (
-                <span
-                  key={i}
-                  className="inline-flex h-8 w-8 items-center justify-center border border-white/20 text-sm font-bold tracking-wider"
-                >
-                  {letter}
-                </span>
-              ))}
+      <div className="brand-divider" />
+      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr_0.9fr]">
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="relative h-16 w-16 overflow-hidden rounded-[22px] border border-white/10 bg-black/70">
+                <Image
+                  src="/images/skbm-logo.webp"
+                  alt="SKBM logo"
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                />
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.34em] text-bronze-soft">
+                  Sri Kovai Bhairavaa
+                </p>
+                <p className="font-heading text-xl font-semibold text-white">Motocrafts</p>
+              </div>
             </div>
-            <p className="text-sm leading-relaxed text-white/50">
-              {SITE_NAME}. Authorized Vespa &amp; Aprilia dealership bringing
-              Italian excellence to Coimbatore.
+
+            <p className="max-w-xl text-sm leading-7 text-white/58">
+              {SITE_DESCRIPTION}
             </p>
-            <div className="mt-6 flex gap-4">
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={`tel:${PHONE_PRIMARY}`}
+                className="rounded-full border border-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/84 hover:border-white/24 hover:text-white"
+              >
+                Call Sales
+              </a>
+              <Link
+                href="/service"
+                className="rounded-full bg-bronze px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-charcoal hover:bg-bronze-soft"
+              >
+                Book Service
+              </Link>
+            </div>
+
+            <div className="flex gap-4 pt-1 text-white/44">
               <a
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-vespa-teal"
                 aria-label="Instagram"
+                className="hover:text-bronze-soft"
               >
                 <InstagramIcon />
               </a>
@@ -72,8 +96,8 @@ export default function Footer() {
                 href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-vespa-teal"
                 aria-label="Facebook"
+                className="hover:text-bronze-soft"
               >
                 <FacebookIcon />
               </a>
@@ -81,88 +105,86 @@ export default function Footer() {
                 href={SOCIAL_LINKS.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-vespa-teal"
                 aria-label="YouTube"
+                className="hover:text-bronze-soft"
               >
                 <YoutubeIcon />
               </a>
             </div>
           </div>
 
-          {/* Quick links */}
-          <div>
-            <h3 className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-white/30">
-              Navigate
-            </h3>
-            <ul className="space-y-3">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
+            <div>
+              <p className="mb-4 text-xs uppercase tracking-[0.28em] text-bronze-soft">
+                Navigate
+              </p>
+              <div className="space-y-3">
+                {NAV_LINKS.map((link) => (
                   <Link
+                    key={link.href}
                     href={link.href}
-                    className="text-sm text-white/50 transition-colors hover:text-white"
+                    className="block text-sm text-white/58 hover:text-white"
                   >
                     {link.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                ))}
+                <Link href="/about" className="block text-sm text-white/58 hover:text-white">
+                  About
+                </Link>
+              </div>
+            </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-white/30">
-              Contact
-            </h3>
-            <ul className="space-y-3 text-sm text-white/50">
-              <li>
-                <a href={`tel:${PHONE_PRIMARY}`} className="transition-colors hover:text-white">
+            <div>
+              <p className="mb-4 text-xs uppercase tracking-[0.28em] text-bronze-soft">
+                Contact
+              </p>
+              <div className="space-y-3 text-sm leading-6 text-white/58">
+                <a href={`tel:${PHONE_PRIMARY}`} className="block hover:text-white">
                   +91 {PHONE_PRIMARY}
                 </a>
-              </li>
-              <li>
-                <a href={`tel:${PHONE_SECONDARY}`} className="transition-colors hover:text-white">
+                <a href={`tel:${PHONE_SECONDARY}`} className="block hover:text-white">
                   +91 {PHONE_SECONDARY}
                 </a>
-              </li>
-              <li>
-                <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-white">
-                  {EMAIL}
-                </a>
-              </li>
-              <li className="pt-2 leading-relaxed">
-                {ADDRESS.full}
-              </li>
-            </ul>
+                <p>{ADDRESS.full}</p>
+              </div>
+            </div>
           </div>
 
-          {/* Hours */}
-          <div>
-            <h3 className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-white/30">
-              Showroom Hours
-            </h3>
-            <ul className="space-y-3 text-sm text-white/50">
-              <li className="flex justify-between">
-                <span>Mon — Fri</span>
-                <span>{HOURS.weekdays}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span>{HOURS.saturday}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span>{HOURS.sunday}</span>
-              </li>
-            </ul>
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.28em] text-bronze-soft">
+              Our Showrooms
+            </p>
+            {SHOWROOMS.map((showroom) => (
+              <a
+                key={showroom.name}
+                href={showroom.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-[24px] border border-white/8 bg-white/[0.03] p-5 transition-colors hover:border-white/16"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-white/42">
+                  {showroom.type}
+                </p>
+                <h3 className="mt-2 font-heading text-lg font-semibold text-white">
+                  {showroom.name}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-white/58">{showroom.address}</p>
+                <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-bronze-soft">
+                  Get directions
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 py-8 text-xs text-white/30 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
-          <div className="flex gap-6">
-            <span>Vespa&reg; and Aprilia&reg; are registered trademarks of Piaggio Group.</span>
-          </div>
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/8 pt-6 text-xs text-white/38 md:flex-row md:items-center md:justify-between">
+          <p>
+            © {new Date().getFullYear()} {SITE_NAME}. {SITE_TAGLINE}
+          </p>
+          <p>Vespa and Aprilia are registered trademarks of Piaggio Group.</p>
         </div>
       </div>
     </footer>

@@ -1,29 +1,21 @@
 export const SITE_NAME = "Sri Kovai Bhairavaa Motocrafts";
 export const SITE_SHORT = "SKBM";
-export const SITE_TAGLINE = "Italian Style. Performance. Heritage.";
+export const SITE_TAGLINE = "Ride Excellence. Service Excellence.";
+export const SITE_EST = "2022";
 export const SITE_DESCRIPTION =
-  "Authorized Vespa & Aprilia dealership in Coimbatore. Premium Italian scooters and motorcycles — sales, service, and genuine parts.";
+  "Authorized Vespa and Aprilia dealership in Coimbatore for premium sales, service, genuine parts, and test rides.";
 
 export const PHONE_PRIMARY = "9626647799";
 export const PHONE_SECONDARY = "9092437799";
 export const WHATSAPP_NUMBER = "919626647799";
-export const EMAIL = "info@skbmotocrafts.com";
 
+// Primary address = Sungam Junction flagship (main showroom, since 2022)
 export const ADDRESS = {
-  line1: "Next to Aadhi Nexa",
-  line2: "Trichy Road, Sulur",
+  line1: "Sungam Junction",
+  line2: "Ramanathapuram, Coimbatore",
   city: "Coimbatore",
   state: "Tamil Nadu",
-  pincode: "641402",
-  full: "Next to Aadhi Nexa, Trichy Road, Sulur, Coimbatore, Tamil Nadu 641402",
-};
-
-export const LOCATIONS = ["Sungam Junction", "Sulur"];
-
-export const HOURS = {
-  weekdays: "9:30 AM — 7:30 PM",
-  saturday: "9:30 AM — 7:30 PM",
-  sunday: "10:00 AM — 5:00 PM",
+  full: "Sungam Junction, Ramanathapuram, Coimbatore, Tamil Nadu",
 };
 
 export const SOCIAL_LINKS = {
@@ -32,135 +24,144 @@ export const SOCIAL_LINKS = {
   youtube: "https://youtube.com/@skbmotocrafts",
 };
 
-export const GOOGLE_MAPS_EMBED =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5!2d76.983406!3d10.9976124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859e4695a8b35%3A0xff0b953b7a22e860!2sVespa+And+Aprilia+-+Sri+Kovai+Bhairavaa+Motocrafts!5e0!3m2!1sen!2sin!4v1";
+// Map links — share links open directions when clicked
+export const MAPS_SUNGAM = "https://maps.app.goo.gl/zSC7pSQcgkDiXEss5";
+export const MAPS_SULUR = "https://maps.app.goo.gl/VBs7vrPwruht3faQ6";
+
+// Embeds resolve the business by name + location
+export const GOOGLE_MAPS_EMBED_SUNGAM =
+  "https://www.google.com/maps?q=Sri+Kovai+Bhairavaa+Motocrafts+Sungam+Junction+Ramanathapuram+Coimbatore&output=embed";
+export const GOOGLE_MAPS_EMBED_SULUR =
+  "https://www.google.com/maps?q=Sri+Kovai+Bhairavaa+Motocrafts+Sulur+Coimbatore&output=embed";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Vespa", href: "/vespa" },
   { label: "Aprilia", href: "/aprilia" },
   { label: "Service", href: "/service" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+// Sungam = main flagship (since 2022). Sulur = newly opened second.
+export const SHOWROOMS = [
+  {
+    name: "Sungam Junction",
+    type: "Flagship showroom · since 2022",
+    address: "Sungam Junction, Ramanathapuram, Coimbatore",
+    phone: PHONE_PRIMARY,
+    maps: MAPS_SUNGAM,
+    embed: GOOGLE_MAPS_EMBED_SUNGAM,
+    main: true,
+  },
+  {
+    name: "Sulur",
+    type: "Newly opened showroom",
+    address: "Next to Aadhi Nexa, Trichy Road, Sulur, Coimbatore",
+    phone: PHONE_SECONDARY,
+    maps: MAPS_SULUR,
+    embed: GOOGLE_MAPS_EMBED_SULUR,
+    main: false,
+  },
+];
+
+export const HOME_PROOF_STRIP = [
+  {
+    title: "Authorized Piaggio dealer",
+    description: "Official Vespa and Aprilia sales, service, and manufacturer-backed support.",
+  },
+  {
+    title: "Two Coimbatore showrooms",
+    description: "Sungam Junction flagship since 2022, with our newly opened Sulur showroom.",
+  },
+  {
+    title: "Genuine parts & service",
+    description: "Factory-trained technicians and certified Piaggio components, every time.",
+  },
+  {
+    title: "WhatsApp-first assistance",
+    description: "Fast enquiry handling for test rides, availability, finance, and service.",
+  },
+];
+
+export const TRUST_PILLARS = [
+  {
+    title: "Authority you can verify",
+    description:
+      "Every purchase and service is anchored in official Piaggio authorization, warranty support, and genuine certification.",
+  },
+  {
+    title: "Friction-free decisions",
+    description:
+      "Clear navigation, honest information, and direct contact details — from first click to showroom visit.",
+  },
+  {
+    title: "Luxury with local relevance",
+    description:
+      "Italian aspiration balanced with what Coimbatore riders actually need: location, test rides, and real support.",
+  },
+  {
+    title: "Confidence after the sale",
+    description:
+      "Service, parts, and trained technicians are here long after delivery — so ownership stays effortless.",
+  },
+];
+
+export const SERVICE_STEPS = [
+  {
+    title: "Choose your ride",
+    description:
+      "Compare Vespa style and Aprilia performance without getting lost in clutter.",
+  },
+  {
+    title: "Visit or test ride",
+    description:
+      "Walk into either showroom and move from interest to lived experience the same day.",
+  },
+  {
+    title: "Own with confidence",
+    description:
+      "Stay supported through service, genuine parts, and direct WhatsApp assistance.",
+  },
 ];
 
 export const VESPA_MODELS = [
   {
     name: "Vespa VXL",
-    tagline: "The icon, perfected.",
-    description: "Classic Italian design meets modern engineering. The VXL is the Vespa you've always dreamed of.",
+    tagline: "The icon, refined.",
+    description:
+      "Classic Vespa proportions with polished city comfort, signature detailing, and effortless everyday elegance.",
   },
   {
     name: "Vespa SXL",
-    tagline: "Style without compromise.",
-    description: "Sporty, refined, and unmistakably Vespa. The SXL turns every ride into a statement.",
+    tagline: "Sharper lines, same soul.",
+    description:
+      "A sportier Vespa silhouette for riders who want the heritage with a little more edge.",
   },
   {
     name: "Vespa ZX",
-    tagline: "Urban elegance.",
-    description: "Agile, efficient, and effortlessly stylish. The ZX is built for the city that never stops.",
+    tagline: "Easy style for daily motion.",
+    description:
+      "A practical city-ready Vespa that still carries the unmistakable personality the brand is known for.",
   },
 ];
 
 export const APRILIA_MODELS = [
   {
     name: "Aprilia SXR 160",
-    tagline: "Designed for racers.",
-    description: "Race-bred DNA in a premium scooter. The SXR 160 brings MotoGP heritage to your daily ride.",
+    tagline: "Race spirit, premium comfort.",
+    description:
+      "A maxi-scooter stance with Aprilia attitude for riders who want performance presence in daily use.",
   },
   {
     name: "Aprilia Storm 125",
-    tagline: "Conquer every road.",
-    description: "Rugged, powerful, and built to dominate. The Storm 125 doesn't follow the crowd.",
+    tagline: "Built for bolder streets.",
+    description:
+      "A rugged, youthful Aprilia for riders who want a more aggressive design language from the start.",
   },
   {
     name: "Aprilia SR 125",
-    tagline: "Pure performance.",
-    description: "Stripped-back, race-focused, and thrilling. The SR 125 is performance without pretense.",
-  },
-];
-
-export const HERITAGE_TIMELINE = [
-  {
-    year: "1946",
-    title: "The Vespa Is Born",
-    description: "Enrico Piaggio unveils the Vespa in post-war Italy — a revolution on two wheels that would change urban mobility forever.",
-  },
-  {
-    year: "1962",
-    title: "Audrey Hepburn Effect",
-    description: "Roman Holiday makes Vespa the icon of freedom and style. Hollywood meets Italian design.",
-  },
-  {
-    year: "1992",
-    title: "Aprilia Joins Piaggio",
-    description: "Racing heritage merges with Italian craftsmanship. Aprilia's 54 world titles become part of the family.",
-  },
-  {
-    year: "2012",
-    title: "Vespa Reaches India",
-    description: "Piaggio brings the Vespa to Indian roads — premium scootering arrives in a new market.",
-  },
-  {
-    year: "2024",
-    title: "SKBM Opens in Coimbatore",
-    description: "Sri Kovai Bhairavaa Motocrafts becomes Coimbatore's authorized destination for Vespa & Aprilia.",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    name: "Karthik R.",
-    location: "RS Puram",
-    vehicle: "Vespa SXL 150",
-    quote: "Walking into SKBM felt like walking into a boutique in Milan. The team treated me like family from the test ride to the delivery. My Vespa turns heads everywhere.",
-    rating: 5,
-  },
-  {
-    name: "Divya M.",
-    location: "Saibaba Colony",
-    vehicle: "Vespa VXL 125",
-    quote: "I bought my Vespa from SKBM six months ago. The service has been exceptional — they call to remind me about maintenance and treat my scooter better than I do.",
-    rating: 5,
-  },
-  {
-    name: "Arjun S.",
-    location: "Peelamedu",
-    vehicle: "Aprilia SXR 160",
-    quote: "The SXR is everything I wanted — and SKBM made the experience even better. Genuine parts, factory-trained technicians, and a team that actually knows the bikes.",
-    rating: 5,
-  },
-  {
-    name: "Priya V.",
-    location: "Vadavalli",
-    vehicle: "Vespa ZX",
-    quote: "I'd been eyeing a Vespa for years. SKBM didn't just sell me one — they gave me an experience. The showroom, the test ride, the delivery ceremony — pure class.",
-    rating: 5,
-  },
-];
-
-export const STATS = [
-  { value: 75, suffix: "+", label: "Years of Heritage" },
-  { value: 19, suffix: "M+", label: "Vespas Worldwide" },
-  { value: 54, suffix: "", label: "Aprilia World Titles" },
-  { value: 100, suffix: "+", label: "Countries Globally" },
-];
-
-export const EXPERIENCE_HIGHLIGHTS = [
-  {
-    title: "The Welcome",
-    description: "Step into our showroom and feel the difference. Italian espresso. Considered conversation. No pressure — just passion for the brands we represent.",
-  },
-  {
-    title: "The Test Ride",
-    description: "Take any model for a real ride. Feel the throttle. Sense the build quality. Make the decision with your hands on the bars.",
-  },
-  {
-    title: "The Delivery",
-    description: "Your vehicle is prepared, polished, and presented like the work of art it is. Every delivery is a ceremony — because every Vespa deserves one.",
-  },
-  {
-    title: "The Relationship",
-    description: "After the sale comes the service. Factory-trained technicians, genuine parts, and a team that remembers your name and your bike.",
+    tagline: "Pure street energy.",
+    description:
+      "A sharp, race-inspired commuter tuned for responsive handling and unmistakable Aprilia character.",
   },
 ];
