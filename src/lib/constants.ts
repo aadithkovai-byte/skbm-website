@@ -4,6 +4,7 @@ export const SITE_TAGLINE = "Ride Excellence. Service Excellence.";
 export const SITE_EST = "2022";
 export const SITE_DESCRIPTION =
   "Authorized Vespa and Aprilia dealership in Coimbatore for premium sales, service, genuine parts, and test rides.";
+export const SITE_URL = "https://www.skbm.in";
 
 export const PHONE_PRIMARY = "9626647799";
 export const PHONE_SECONDARY = "9092437799";
@@ -20,8 +21,8 @@ export const ADDRESS = {
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/sri_kovai_bhairavaa_motocrafts/",
-  facebook: "https://facebook.com/skbmotocrafts",
-  youtube: "https://youtube.com/@skbmotocrafts",
+  facebook:
+    "https://www.facebook.com/people/Srikovaibhairavaamotocrafts/61584549082263/",
 };
 
 // Map links — share links open directions when clicked
@@ -126,42 +127,62 @@ export const SERVICE_STEPS = [
 
 export const VESPA_MODELS = [
   {
-    name: "Vespa VXL",
-    tagline: "The icon, refined.",
-    description:
-      "Classic Vespa proportions with polished city comfort, signature detailing, and effortless everyday elegance.",
-  },
-  {
-    name: "Vespa SXL",
-    tagline: "Sharper lines, same soul.",
-    description:
-      "A sportier Vespa silhouette for riders who want the heritage with a little more edge.",
-  },
-  {
     name: "Vespa ZX",
-    tagline: "Easy style for daily motion.",
+    tagline: "The icon, ready for every day.",
     description:
-      "A practical city-ready Vespa that still carries the unmistakable personality the brand is known for.",
+      "Classic Vespa proportions with polished city comfort and effortless everyday elegance.",
+    image: "/images/model-vespa-zx.webp",
+  },
+  {
+    name: "Vespa",
+    tagline: "The original. Unmistakable.",
+    description:
+      "The silhouette that started it all — pure Italian design, unchanged in spirit since 1946.",
+    image: "/images/model-vespa-base.webp",
+  },
+  {
+    name: "Vespa S",
+    tagline: "Bold city icon.",
+    description:
+      "A sportier stance, blacked-out details, and a little more attitude for the daily ride.",
+    image: "/images/model-vespa-s.webp",
+  },
+  {
+    name: "Vespa Tech / Qala",
+    tagline: "Crafted with character.",
+    description:
+      "The most expressive Vespa — artisan detailing and modern tech in one head-turning machine.",
+    image: "/images/model-vespa-tech.webp",
   },
 ];
 
 export const APRILIA_MODELS = [
   {
-    name: "Aprilia SXR 160",
-    tagline: "Race spirit, premium comfort.",
-    description:
-      "A maxi-scooter stance with Aprilia attitude for riders who want performance presence in daily use.",
-  },
-  {
     name: "Aprilia Storm 125",
     tagline: "Built for bolder streets.",
     description:
       "A rugged, youthful Aprilia for riders who want a more aggressive design language from the start.",
+    image: "/images/model-aprilia-storm125.webp",
   },
   {
-    name: "Aprilia SR 125",
+    name: "Aprilia SR 175",
     tagline: "Pure street energy.",
     description:
-      "A sharp, race-inspired commuter tuned for responsive handling and unmistakable Aprilia character.",
+      "A sharp, race-inspired scooter tuned for responsive handling and unmistakable Aprilia character.",
+    image: "/images/model-aprilia-sr175.webp",
+  },
+  {
+    name: "Aprilia SR 175 Tribute",
+    tagline: "Racing colours, road legal.",
+    description:
+      "The SR 175 dressed in Aprilia's racing livery — for riders who want the paddock look every day.",
+    image: "/images/model-aprilia-sr175-tribute.webp",
   },
 ];
+
+// Pre-filled WhatsApp enquiry for a model's on-road price
+export function whatsappPriceLink(model: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hi SKBM! I'd like the on-road price of the ${model}.`
+  )}`;
+}

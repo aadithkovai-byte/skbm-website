@@ -91,16 +91,25 @@ export default function ServiceForm() {
             className="w-full border-b border-charcoal-light/30 bg-transparent py-3 text-foreground outline-none transition-colors focus:border-vespa-teal"
           >
             <option value="">Select your vehicle</option>
-            <optgroup label="Vespa">
+            <optgroup label="Vespa — current range">
+              <option>Vespa ZX</option>
+              <option>Vespa</option>
+              <option>Vespa S</option>
+              <option>Vespa Tech / Qala</option>
+            </optgroup>
+            <optgroup label="Vespa — earlier models">
               <option>Vespa VXL 125</option>
               <option>Vespa VXL 150</option>
               <option>Vespa SXL 125</option>
               <option>Vespa SXL 150</option>
-              <option>Vespa ZX 125</option>
             </optgroup>
-            <optgroup label="Aprilia">
-              <option>Aprilia SXR 160</option>
+            <optgroup label="Aprilia — current range">
               <option>Aprilia Storm 125</option>
+              <option>Aprilia SR 175</option>
+              <option>Aprilia SR 175 Tribute</option>
+            </optgroup>
+            <optgroup label="Aprilia — earlier models">
+              <option>Aprilia SXR 160</option>
               <option>Aprilia SR 125</option>
               <option>Aprilia SR 160</option>
             </optgroup>

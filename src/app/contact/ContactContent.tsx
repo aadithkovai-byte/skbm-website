@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
+import TestRideForm from "@/components/TestRideForm";
 import {
   PHONE_PRIMARY,
   PHONE_SECONDARY,
@@ -82,6 +83,29 @@ export default function ContactContent() {
               WhatsApp
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Book a test ride ─── */}
+      <section id="test-ride" className="scroll-mt-28 px-4 pt-4 pb-8 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <AnimatedSection>
+            <div className="lux-panel rounded-[32px] p-8 sm:p-12">
+              <div className="max-w-2xl">
+                <p className="section-kicker text-bronze">Book a test ride</p>
+                <h2 className="mt-5 font-heading text-4xl tracking-tight text-charcoal sm:text-5xl">
+                  Pick your bike. We&apos;ll have it ready.
+                </h2>
+                <p className="mt-5 text-base leading-8 text-gray-muted">
+                  Thirty seconds to fill in — your request lands straight on our
+                  WhatsApp and we confirm your slot.
+                </p>
+              </div>
+              <div className="mt-10">
+                <TestRideForm />
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

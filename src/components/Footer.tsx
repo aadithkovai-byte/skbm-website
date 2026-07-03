@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ApriliaLogo, VespaLogo } from "@/components/BrandLogos";
 import {
   ADDRESS,
   NAV_LINKS,
@@ -26,14 +27,6 @@ function FacebookIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
-    </svg>
-  );
-}
-
-function YoutubeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-      <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-2A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
     </svg>
   );
 }
@@ -101,15 +94,14 @@ export default function Footer() {
               >
                 <FacebookIcon />
               </a>
-              <a
-                href={SOCIAL_LINKS.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="hover:text-bronze-soft"
-              >
-                <YoutubeIcon />
-              </a>
+            </div>
+
+            <div className="flex items-center gap-6 pt-4 text-white/55">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-white/40">
+                Authorized dealer of
+              </p>
+              <VespaLogo className="h-6 w-auto" />
+              <ApriliaLogo className="h-6 w-auto" />
             </div>
           </div>
 

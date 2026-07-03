@@ -4,9 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
-import { APRILIA_MODELS } from "@/lib/constants";
-
-const modelAccent = ["/images/aprilia-studio.webp", "/images/aprilia-lifestyle.webp", "/images/showroom-aprilia.webp"];
+import { ApriliaLogo } from "@/components/BrandLogos";
+import { APRILIA_MODELS, whatsappPriceLink } from "@/lib/constants";
 
 export default function ApriliaContent() {
   return (
@@ -35,6 +34,14 @@ export default function ApriliaContent() {
           >
             Designed for racers
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="mt-5"
+          >
+            <ApriliaLogo className="h-10 w-auto text-white" />
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +68,7 @@ export default function ApriliaContent() {
             className="mt-9"
           >
             <Link
-              href="/contact"
+              href="/contact#test-ride"
               className="inline-flex items-center gap-3 rounded-full bg-aprilia-red px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white hover:bg-[#b81f27]"
             >
               Book a test ride
@@ -80,11 +87,11 @@ export default function ApriliaContent() {
             <AnimatedSection>
               <div className="editorial-shadow relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/8">
                 <Image
-                  src="/images/aprilia-studio.webp"
-                  alt="Aprilia SR studio"
+                  src="/images/aprilia-dusk.webp"
+                  alt="A rider with her Aprilia SR at dusk"
                   fill
                   sizes="(max-width: 1024px) 100vw, 48vw"
-                  className="object-cover"
+                  className="object-cover object-[70%_center]"
                 />
               </div>
             </AnimatedSection>
@@ -129,17 +136,17 @@ export default function ApriliaContent() {
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {APRILIA_MODELS.map((model, i) => (
               <AnimatedSection key={model.name} delay={i * 0.12}>
-                <div className="group overflow-hidden rounded-[28px] border border-white/8 bg-charcoal/50 transition-colors hover:border-aprilia-red/40">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-white/8 bg-charcoal/50 transition-colors hover:border-aprilia-red/40">
+                  <div className="relative aspect-[4/5] overflow-hidden">
                     <Image
-                      src={modelAccent[i]}
+                      src={model.image}
                       alt={model.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-8">
+                  <div className="flex flex-1 flex-col p-7 sm:p-8">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-aprilia-red">
                       {model.tagline}
                     </p>
@@ -147,15 +154,17 @@ export default function ApriliaContent() {
                       {model.name}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-white/50">{model.description}</p>
-                    <Link
-                      href="/contact"
-                      className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-white hover:text-aprilia-red"
+                    <a
+                      href={whatsappPriceLink(model.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white hover:text-aprilia-red"
                     >
-                      Enquire
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-3.5 w-3.5">
+                      Get price on WhatsApp
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-3.5 w-3.5 shrink-0">
                         <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </AnimatedSection>
@@ -177,10 +186,10 @@ export default function ApriliaContent() {
             </p>
             <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/contact"
+                href="/contact#test-ride"
                 className="inline-flex items-center gap-3 rounded-full bg-aprilia-red px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-white hover:bg-[#b81f27]"
               >
-                Visit a showroom
+                Book a test ride
               </Link>
               <Link
                 href="/service"

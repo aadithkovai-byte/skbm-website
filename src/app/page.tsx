@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
+import { ApriliaLogo, VespaLogo } from "@/components/BrandLogos";
 import {
   ADDRESS,
   PHONE_PRIMARY,
@@ -35,7 +36,7 @@ const brandCards = [
     name: "Vespa",
     href: "/vespa",
     eyebrow: "Live more",
-    image: "/images/editorial-vespa-milan.webp",
+    image: "/images/model-vespa-zx.webp",
     background: "bg-off-white",
     border: "border-charcoal/8",
     accent: "text-vespa-teal",
@@ -117,7 +118,7 @@ export default function HomePage() {
                 className="mt-9 flex flex-col gap-3 sm:flex-row"
               >
                 <Link
-                  href="/contact"
+                  href="/contact#test-ride"
                   className="inline-flex items-center justify-center gap-3 rounded-full bg-charcoal px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-white hover:bg-matte-black"
                 >
                   Book a test ride
@@ -130,6 +131,19 @@ export default function HomePage() {
                   +91 {PHONE_PRIMARY}
                 </a>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.42 }}
+                className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3"
+              >
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-gray-muted">
+                  Authorized dealer of
+                </p>
+                <VespaLogo className="h-7 w-auto text-charcoal/80" />
+                <ApriliaLogo className="h-7 w-auto text-charcoal/80" />
+              </motion.div>
             </div>
 
             <motion.div
@@ -141,8 +155,8 @@ export default function HomePage() {
               <div className="hero-frame relative overflow-hidden rounded-[36px] bg-charcoal">
                 <div className="relative aspect-[5/6] sm:aspect-[4/4] lg:aspect-[5/6]">
                   <Image
-                    src="/images/editorial-vespa-milan.webp"
-                    alt="Vespa — same icon, new destination, now in Coimbatore"
+                    src="/images/hero-vespa-coimbatore.webp"
+                    alt="A rider with his Vespa outside our Coimbatore showroom"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 44vw"
@@ -242,8 +256,12 @@ export default function HomePage() {
                       <p className={`text-xs font-semibold uppercase tracking-[0.28em] ${card.accent}`}>
                         {card.eyebrow}
                       </p>
-                      <h3 className={`mt-4 font-heading text-4xl tracking-tight ${card.headingClass}`}>
-                        {card.name}
+                      <h3 className={`mt-5 ${card.headingClass}`}>
+                        {card.name === "Vespa" ? (
+                          <VespaLogo className="h-9 w-auto" />
+                        ) : (
+                          <ApriliaLogo className="h-9 w-auto" />
+                        )}
                       </h3>
                       <p className={`mt-5 text-sm leading-7 ${card.bodyClass}`}>{card.line}</p>
                       <Link
@@ -340,7 +358,7 @@ export default function HomePage() {
                 long after the keys are yours.
               </p>
               <Link
-                href="/contact"
+                href="/contact#test-ride"
                 className="mt-8 inline-flex items-center gap-3 rounded-full bg-charcoal px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-white hover:bg-matte-black"
               >
                 Book a test ride
@@ -399,7 +417,7 @@ export default function HomePage() {
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="/contact"
+                    href="/contact#test-ride"
                     className="inline-flex items-center justify-center gap-3 rounded-full bg-bronze px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-charcoal hover:bg-bronze-soft"
                   >
                     Book a test ride

@@ -4,13 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
-import { VESPA_MODELS } from "@/lib/constants";
-
-const modelImages = [
-  "/images/vespa-lifestyle-1.webp",
-  "/images/vespa-lifestyle-2.webp",
-  "/images/vespa-lifestyle-4.webp",
-];
+import { VespaLogo } from "@/components/BrandLogos";
+import { VESPA_MODELS, whatsappPriceLink } from "@/lib/constants";
 
 export default function VespaContent() {
   return (
@@ -29,8 +24,16 @@ export default function VespaContent() {
                 transition={{ duration: 0.7 }}
                 className="section-kicker text-vespa-teal"
               >
-                Live more · Vespa
+                Live more
               </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.05 }}
+                className="mt-5"
+              >
+                <VespaLogo className="h-10 w-auto text-vespa-teal" />
+              </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -57,7 +60,7 @@ export default function VespaContent() {
                 className="mt-9"
               >
                 <Link
-                  href="/contact"
+                  href="/contact#test-ride"
                   className="inline-flex items-center gap-3 rounded-full bg-charcoal px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white hover:bg-matte-black"
                 >
                   Book a test ride
@@ -74,10 +77,11 @@ export default function VespaContent() {
               transition={{ duration: 0.95, delay: 0.18 }}
               className="hero-frame relative overflow-hidden rounded-[36px]"
             >
-              <div className="relative aspect-[4/5]">
+              {/* Frame matches the poster's own shape so its artwork text is never cropped */}
+              <div className="relative aspect-[5/4]">
                 <Image
                   src="/images/editorial-vespa-milan.webp"
-                  alt="Vespa — same icon, new destination"
+                  alt="Vespa — Milan to Kovai"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 48vw"
@@ -130,36 +134,38 @@ export default function VespaContent() {
             </h2>
           </AnimatedSection>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {VESPA_MODELS.map((model, i) => (
-              <AnimatedSection key={model.name} delay={i * 0.12}>
-                <div className="group overflow-hidden rounded-[28px] border border-charcoal/8 bg-white">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+              <AnimatedSection key={model.name} delay={i * 0.1}>
+                <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-charcoal/8 bg-white">
+                  <div className="relative aspect-[4/5] overflow-hidden">
                     <Image
-                      src={modelImages[i]}
+                      src={model.image}
                       alt={model.name}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-8">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-vespa-teal">
+                  <div className="flex flex-1 flex-col p-6 sm:p-7">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-vespa-teal">
                       {model.tagline}
                     </p>
                     <h3 className="mt-3 font-heading text-2xl tracking-tight text-charcoal">
                       {model.name}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-gray-muted">{model.description}</p>
-                    <Link
-                      href="/contact"
-                      className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-charcoal hover:text-vespa-teal"
+                    <a
+                      href={whatsappPriceLink(model.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold uppercase tracking-[0.16em] text-charcoal hover:text-vespa-teal"
                     >
-                      Enquire
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-3.5 w-3.5">
+                      Get price on WhatsApp
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-3.5 w-3.5 shrink-0">
                         <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </AnimatedSection>
@@ -196,10 +202,10 @@ export default function VespaContent() {
             </p>
             <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/contact"
+                href="/contact#test-ride"
                 className="inline-flex items-center gap-3 rounded-full bg-bronze px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-charcoal hover:bg-bronze-soft"
               >
-                Visit a showroom
+                Book a test ride
               </Link>
               <Link
                 href="/service"
