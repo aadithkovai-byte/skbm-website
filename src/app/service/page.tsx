@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServiceContent from "./ServiceContent";
 
 export const metadata: Metadata = {
-  title: "Service — Factory-Trained Care for Your Italian Ride",
+  title: "Vespa & Aprilia Service Center in Coimbatore, Tamil Nadu",
   description:
-    "Book a service appointment for your Vespa or Aprilia at Sri Kovai Bhairavaa Motocrafts, Coimbatore. Factory-trained technicians, genuine parts, and premium care.",
+    "Book Vespa or Aprilia service in Coimbatore, Tamil Nadu at SKBM. Factory-trained technicians, genuine Piaggio parts, pick-up and drop available — confirm your slot on WhatsApp.",
 };
 
 export default function ServicePage() {

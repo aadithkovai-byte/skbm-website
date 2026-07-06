@@ -59,7 +59,8 @@ export default function ApriliaContent() {
             className="mt-6 max-w-lg text-lg leading-8 text-white/55"
           >
             Built for those who are. 54 world titles. 294 Grand Prix wins. That
-            racing DNA lives in every Aprilia you ride.
+            racing DNA lives in every Aprilia you ride — now in Coimbatore,
+            Tamil Nadu.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -85,17 +86,6 @@ export default function ApriliaContent() {
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <AnimatedSection>
-              <div className="editorial-shadow relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/8">
-                <Image
-                  src="/images/aprilia-tribute-poster.webp"
-                  alt="Aprilia SR 175 Tribute under studio lights"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 48vw"
-                  className="object-cover object-right"
-                />
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.15}>
               <p className="section-kicker text-aprilia-red">Racing DNA</p>
               <h2 className="mt-5 font-heading text-4xl tracking-tight text-white sm:text-5xl">
                 Born on the track.
@@ -105,7 +95,9 @@ export default function ApriliaContent() {
                 That obsession with precision and performance is built into every
                 machine, from Mugello to the streets of Coimbatore.
               </p>
-              <div className="mt-10 grid max-w-md grid-cols-3 gap-6">
+            </AnimatedSection>
+            <AnimatedSection delay={0.15}>
+              <div className="grid max-w-md grid-cols-3 gap-6 lg:ml-auto">
                 {[
                   { value: "54", label: "World titles" },
                   { value: "294", label: "GP wins" },
@@ -119,6 +111,20 @@ export default function ApriliaContent() {
               </div>
             </AnimatedSection>
           </div>
+
+          {/* Full-width, uncropped: helmets and technical clothing at the dealership */}
+          <AnimatedSection delay={0.1} className="mt-12">
+            <div className="editorial-shadow overflow-hidden rounded-[32px] border border-white/8">
+              <Image
+                src="/images/aprilia-helmets-banner.webp"
+                alt="Aprilia helmets and technical riding clothing, available at SKBM Coimbatore"
+                width={1672}
+                height={941}
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="h-auto w-full"
+              />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -133,19 +139,19 @@ export default function ApriliaContent() {
             </h2>
           </AnimatedSection>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid items-start gap-6 md:grid-cols-2">
             {APRILIA_MODELS.map((model, i) => (
               <AnimatedSection key={model.name} delay={i * 0.12}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-white/8 bg-charcoal/50 transition-colors hover:border-aprilia-red/40">
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={model.image}
-                      alt={model.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
+                <div className="group flex flex-col overflow-hidden rounded-[28px] border border-white/8 bg-charcoal/50 transition-colors hover:border-aprilia-red/40">
+                  {/* Full poster, never cropped */}
+                  <Image
+                    src={model.image}
+                    alt={`${model.name} at SKBM, the Aprilia showroom in Coimbatore, Tamil Nadu`}
+                    width={model.width}
+                    height={model.height}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="h-auto w-full"
+                  />
                   <div className="flex flex-1 flex-col p-7 sm:p-8">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-aprilia-red">
                       {model.tagline}

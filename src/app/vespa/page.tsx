@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import VespaContent from "./VespaContent";
 
 export const metadata: Metadata = {
-  title: "Vespa — Italian Elegance on Two Wheels",
+  title: "Vespa Showroom in Coimbatore, Tamil Nadu — ZX, S, Tech & Qala",
   description:
-    "Explore the Vespa range at Sri Kovai Bhairavaa Motocrafts, Coimbatore. VXL, SXL, ZX — timeless Italian design, now in your city. Book a test ride today.",
+    "Authorized Vespa dealer in Coimbatore, Tamil Nadu. Explore the Vespa ZX, Vespa, Vespa S, and Vespa Tech / Qala at SKBM — prices on WhatsApp, test rides at Sungam Junction and Sulur.",
 };
 
 export default function VespaPage() {

@@ -14,6 +14,7 @@ import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
   GOOGLE_REVIEWS,
+  HERITAGE_TIMELINE,
   MAPS_SUNGAM,
 } from "@/lib/constants";
 
@@ -76,24 +77,28 @@ const brandCards = [
 const ownershipMoments = [
   { src: "/images/delivery-unveil.webp", tag: "Delivery day", className: "lg:col-span-5 lg:row-span-2" },
   { src: "/images/customer-joy.webp", tag: "New Vespa, first smile", className: "lg:col-span-4" },
+  { src: "/images/delivery-cust-3.webp", tag: "The big reveal", className: "lg:col-span-4" },
   { src: "/images/delivery-family.webp", tag: "A family ride", className: "lg:col-span-3" },
+  { src: "/images/delivery-cust-2.webp", tag: "New rider, new Vespa", className: "lg:col-span-3" },
   { src: "/images/customer-portrait.webp", tag: "Picked it in person", className: "lg:col-span-3" },
+  { src: "/images/delivery-cust-1.webp", tag: "First look", className: "lg:col-span-2" },
+  { src: "/images/delivery-cust-4.webp", tag: "Keys in hand", className: "lg:col-span-3" },
   { src: "/images/delivery-couple.webp", tag: "Handed over with care", className: "lg:col-span-4" },
 ];
 
 export default function HomePage() {
   return (
     <div className="bg-matte-black text-white">
-      {/* ─── Hero: both icons, one stage ─── */}
-      <section className="relative flex min-h-[94vh] items-end overflow-hidden px-4 pb-20 pt-44 sm:px-6">
-        <div className="absolute inset-0">
+      {/* ─── Hero: both icons, one stage (image behind text on desktop; pure black + image below on mobile) ─── */}
+      <section className="relative flex items-end overflow-hidden px-4 pb-14 pt-40 lg:min-h-[94vh] lg:pb-20 lg:pt-44 sm:px-6">
+        <div className="absolute inset-0 hidden lg:block">
           <Image
             src="/images/hero-duo.webp"
             alt="A Vespa and an Aprilia together in the SKBM studio"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[38%_center] lg:object-center"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-matte-black/92 via-matte-black/55 to-matte-black/20" />
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-matte-black to-transparent" />
@@ -172,9 +177,24 @@ export default function HomePage() {
               className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.24em] text-white/55 hover:text-bronze-soft"
             >
               <StarIcon className="h-3.5 w-3.5 text-bronze" />
-              {GOOGLE_RATING} on Google · {GOOGLE_REVIEW_COUNT} reviews
+              {GOOGLE_RATING}+ stars on Google · {GOOGLE_REVIEW_COUNT} reviews
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Mobile-only: the hero image in full, right below the text ─── */}
+      <section className="px-4 pb-8 sm:px-6 lg:hidden">
+        <div className="overflow-hidden rounded-[24px] border border-white/10">
+          <Image
+            src="/images/hero-duo.webp"
+            alt="A Vespa and an Aprilia together in the SKBM studio"
+            width={2000}
+            height={1125}
+            priority
+            sizes="100vw"
+            className="h-auto w-full"
+          />
         </div>
       </section>
 
@@ -305,7 +325,7 @@ export default function HomePage() {
             <div>
               <p className="section-kicker text-bronze-soft">What riders say</p>
               <h2 className="mt-5 font-heading text-4xl tracking-tight text-off-white sm:text-5xl">
-                Rated {GOOGLE_RATING} on Google.
+                Rated {GOOGLE_RATING}+ on Google.
               </h2>
             </div>
             <a
@@ -322,20 +342,66 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {GOOGLE_REVIEWS.map((review, index) => (
               <AnimatedSection key={review.name} delay={index * 0.1}>
-                <figure className="lux-panel-dark flex h-full flex-col rounded-[28px] p-7 sm:p-8">
-                  <StarIcon className="h-5 w-5 text-bronze" />
-                  <blockquote className="mt-5 flex-1 font-heading text-lg italic leading-8 text-white/85">
-                    &ldquo;{review.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-6 border-t border-white/8 pt-5">
-                    <p className="text-sm font-semibold text-white">{review.name}</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/45">
+                <figure className="editorial-shadow flex h-full flex-col rounded-[24px] bg-white p-7 sm:p-8">
+                  <figcaption>
+                    <p className="text-base font-semibold text-charcoal">{review.name}</p>
+                    <p className="mt-1 text-xs text-gray-muted">
                       {review.context} · Google review
                     </p>
                   </figcaption>
+                  <div className="mt-4 flex gap-1" aria-label="5 star rating">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <StarIcon key={i} className="h-4 w-4 text-charcoal" />
+                    ))}
+                  </div>
+                  <blockquote className="mt-4 flex-1 text-sm leading-7 text-charcoal/80">
+                    &ldquo;{review.quote}&rdquo;
+                  </blockquote>
                 </figure>
               </AnimatedSection>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Heritage timeline ─── */}
+      <section className="px-4 py-20 sm:px-6 lg:py-28">
+        <div className="mx-auto max-w-5xl">
+          <AnimatedSection className="text-center">
+            <p className="section-kicker justify-center text-bronze-soft">Our heritage</p>
+            <h2 className="mt-5 font-heading text-4xl tracking-tight text-off-white sm:text-5xl">
+              Eighty years in the making.
+            </h2>
+          </AnimatedSection>
+
+          <div className="relative mt-16">
+            {/* the line */}
+            <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-bronze/60 via-bronze/25 to-transparent md:left-1/2" />
+
+            <div className="space-y-14 md:space-y-20">
+              {HERITAGE_TIMELINE.map((event, i) => (
+                <AnimatedSection key={event.year} delay={i * 0.08}>
+                  <div className="relative pl-12 md:grid md:grid-cols-2 md:gap-14 md:pl-0">
+                    {/* dot */}
+                    <div className="absolute left-4 top-2 h-3 w-3 -translate-x-[5.5px] rounded-full border-2 border-bronze bg-matte-black md:left-1/2 md:-translate-x-[6px]" />
+
+                    <div className={i % 2 === 0 ? "md:text-right" : "md:order-2 md:text-left"}>
+                      <p className="font-heading text-5xl tracking-tight text-bronze sm:text-6xl">
+                        {event.year}
+                      </p>
+                    </div>
+                    <div className={i % 2 === 0 ? "mt-3 md:order-2 md:mt-1" : "mt-3 md:text-right md:mt-1"}>
+                      <h3 className="font-heading text-xl font-semibold text-white">
+                        {event.title}
+                      </h3>
+                      <p className="mt-2 max-w-md text-sm leading-7 text-white/55 md:inline-block">
+                        {event.description}
+                      </p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -72,7 +72,8 @@ export const HOME_PROOF_STRIP = [
   },
   {
     title: "Two Coimbatore showrooms",
-    description: "Sungam Junction flagship since 2022, with our newly opened Sulur showroom.",
+    description:
+      "Sungam Junction flagship since 2022 and our newly opened Sulur showroom — serving riders across Tamil Nadu.",
   },
   {
     title: "Genuine parts & service",
@@ -125,34 +126,44 @@ export const SERVICE_STEPS = [
   },
 ];
 
+// Model poster images are shown WHOLE (no cropping) — width/height are the
+// files' intrinsic dimensions so cards render each poster at its natural shape.
 export const VESPA_MODELS = [
   {
     name: "Vespa ZX",
     tagline: "The icon, ready for every day.",
     description:
       "Classic Vespa proportions with polished city comfort and effortless everyday elegance.",
-    image: "/images/model-vespa-zx.webp",
+    image: "/images/poster-vespa-zx.webp",
+    width: 1400,
+    height: 1052,
   },
   {
     name: "Vespa",
     tagline: "The original. Unmistakable.",
     description:
       "The silhouette that started it all — pure Italian design, unchanged in spirit since 1946.",
-    image: "/images/model-vespa-base.webp",
+    image: "/images/poster-vespa-base.webp",
+    width: 1400,
+    height: 934,
   },
   {
     name: "Vespa S",
     tagline: "Bold city icon.",
     description:
       "A sportier stance, blacked-out details, and a little more attitude for the daily ride.",
-    image: "/images/model-vespa-s.webp",
+    image: "/images/poster-vespa-s.webp",
+    width: 1122,
+    height: 1402,
   },
   {
     name: "Vespa Tech / Qala",
     tagline: "Crafted with character.",
     description:
       "The most expressive Vespa — artisan detailing and modern tech in one head-turning machine.",
-    image: "/images/model-vespa-tech.webp",
+    image: "/images/poster-vespa-tech.webp",
+    width: 1122,
+    height: 1402,
   },
 ];
 
@@ -162,21 +173,61 @@ export const APRILIA_MODELS = [
     tagline: "Built for bolder streets.",
     description:
       "A rugged, youthful Aprilia for riders who want a more aggressive design language from the start.",
-    image: "/images/model-aprilia-storm125.webp",
+    image: "/images/poster-aprilia-storm.webp",
+    width: 802,
+    height: 1086,
   },
   {
     name: "Aprilia SR 175",
     tagline: "Pure street energy.",
     description:
       "A sharp, race-inspired scooter tuned for responsive handling and unmistakable Aprilia character.",
-    image: "/images/model-aprilia-sr175.webp",
+    image: "/images/poster-aprilia-sr175.webp",
+    width: 1400,
+    height: 1048,
   },
   {
     name: "Aprilia SR 175 Tribute",
     tagline: "Racing colours, road legal.",
     description:
       "The SR 175 dressed in Aprilia's racing livery — for riders who want the paddock look every day.",
-    image: "/images/model-aprilia-sr175-tribute.webp",
+    image: "/images/poster-aprilia-tribute.webp",
+    width: 1400,
+    height: 934,
+  },
+];
+
+// Heritage timeline (restored from the v2 design at the user's request; 2022 = real founding year)
+export const HERITAGE_TIMELINE = [
+  {
+    year: "1946",
+    title: "The Vespa is born",
+    description:
+      "Enrico Piaggio unveils the Vespa in post-war Italy — a revolution on two wheels that would change urban mobility forever.",
+  },
+  {
+    year: "1962",
+    title: "The Audrey Hepburn effect",
+    description:
+      "Roman Holiday makes Vespa the icon of freedom and style. Hollywood meets Italian design.",
+  },
+  {
+    year: "1992",
+    title: "Aprilia joins Piaggio",
+    description:
+      "Racing heritage merges with Italian craftsmanship. Aprilia's 54 world titles become part of the family.",
+  },
+  {
+    year: "2012",
+    title: "Vespa reaches India",
+    description:
+      "Piaggio brings the Vespa to Indian roads — premium scootering arrives in a new market.",
+  },
+  {
+    year: "2022",
+    title: "SKBM opens in Coimbatore",
+    description:
+      "Sri Kovai Bhairavaa Motocrafts opens at Sungam Junction — Coimbatore's authorized destination for Vespa & Aprilia.",
   },
 ];
 

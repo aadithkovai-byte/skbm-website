@@ -45,7 +45,7 @@ export default function Navbar() {
           </div>
 
           <div
-            className={`lux-panel-dark rounded-[28px] px-4 py-3 sm:px-6 ${
+            className={`rounded-[28px] border border-white/8 bg-black px-4 py-3 sm:px-6 ${
               scrolled ? "shadow-2xl shadow-black/30" : "shadow-xl shadow-black/20"
             }`}
           >

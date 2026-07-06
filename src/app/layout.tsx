@@ -31,14 +31,18 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sri Kovai Bhairavaa Motocrafts — Authorized Vespa & Aprilia Dealer, Coimbatore",
+    default: "Vespa & Aprilia Dealer in Coimbatore, Tamil Nadu | SKBM — Sri Kovai Bhairavaa Motocrafts",
     template: "%s | SKBM — Vespa & Aprilia Coimbatore",
   },
   description:
-    "Authorized Vespa & Aprilia dealership in Coimbatore. Premium Italian scooters and motorcycles — sales, service, and genuine parts at Sulur & Sungam Junction.",
+    "Authorized Vespa & Aprilia dealership in Coimbatore, Tamil Nadu. Premium Italian scooters — sales, service, genuine parts, and test rides at Sungam Junction & Sulur.",
   keywords: [
     "Vespa Coimbatore",
     "Aprilia Coimbatore",
+    "Coimbatore Vespa",
+    "Coimbatore Aprilia",
+    "Vespa Tamil Nadu",
+    "Aprilia Tamil Nadu",
     "Vespa dealer Coimbatore",
     "Aprilia dealer Coimbatore",
     "Sri Kovai Bhairavaa Motocrafts",
@@ -86,6 +90,11 @@ const localBusinessJsonLd = {
       url: SITE_URL,
       telephone: `+91${PHONE_PRIMARY}`,
       image: `${SITE_URL}/opengraph-image.jpg`,
+      logo: `${SITE_URL}/icon.png`,
+      areaServed: [
+        { "@type": "City", name: "Coimbatore" },
+        { "@type": "State", name: "Tamil Nadu" },
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Sungam Junction, Ramanathapuram",
@@ -107,6 +116,11 @@ const localBusinessJsonLd = {
       url: SITE_URL,
       telephone: `+91${PHONE_SECONDARY}`,
       image: `${SITE_URL}/opengraph-image.jpg`,
+      logo: `${SITE_URL}/icon.png`,
+      areaServed: [
+        { "@type": "City", name: "Coimbatore" },
+        { "@type": "State", name: "Tamil Nadu" },
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Next to Aadhi Nexa, Trichy Road, Sulur",

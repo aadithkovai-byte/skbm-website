@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
 
 export const metadata: Metadata = {
-  title: "Contact — Visit Our Showroom",
+  title: "Visit Our Vespa & Aprilia Showrooms in Coimbatore, Tamil Nadu",
   description:
-    "Get in touch with Sri Kovai Bhairavaa Motocrafts. Visit our Vespa & Aprilia showrooms at Sulur and Sungam Junction, Coimbatore. Call, WhatsApp, or walk in.",
+    "Two Vespa & Aprilia showrooms in Coimbatore, Tamil Nadu — Sungam Junction and Sulur. Book a test ride, call, or WhatsApp Sri Kovai Bhairavaa Motocrafts (SKBM).",
 };
 
 export default function ContactPage() {

@@ -52,6 +52,7 @@ export default function VespaContent() {
               >
                 For over 75 years, Vespa has been more than a scooter — it&apos;s
                 the symbol of Italian style, freedom, and arriving beautifully.
+                Now in Coimbatore, Tamil Nadu.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
@@ -134,19 +135,19 @@ export default function VespaContent() {
             </h2>
           </AnimatedSection>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid items-start gap-6 sm:grid-cols-2">
             {VESPA_MODELS.map((model, i) => (
               <AnimatedSection key={model.name} delay={i * 0.1}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-charcoal/8 bg-white">
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={model.image}
-                      alt={model.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
+                <div className="group flex flex-col overflow-hidden rounded-[28px] border border-charcoal/8 bg-white">
+                  {/* Full poster, never cropped — baked-in text stays readable */}
+                  <Image
+                    src={model.image}
+                    alt={`${model.name} at SKBM, the Vespa showroom in Coimbatore, Tamil Nadu`}
+                    width={model.width}
+                    height={model.height}
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="h-auto w-full"
+                  />
                   <div className="flex flex-1 flex-col p-6 sm:p-7">
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-vespa-teal">
                       {model.tagline}
