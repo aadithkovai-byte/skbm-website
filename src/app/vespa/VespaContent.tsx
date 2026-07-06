@@ -78,10 +78,10 @@ export default function VespaContent() {
               className="hero-frame relative overflow-hidden rounded-[36px]"
             >
               {/* Frame matches the poster's own shape so its artwork text is never cropped */}
-              <div className="relative aspect-[5/4]">
+              <div className="relative aspect-[4/5]">
                 <Image
-                  src="/images/editorial-vespa-milan.webp"
-                  alt="Vespa — Milan to Kovai"
+                  src="/images/vespa-hero-arrived.webp"
+                  alt="Vespa — for those who've arrived. Now in Coimbatore."
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 48vw"
@@ -112,8 +112,8 @@ export default function VespaContent() {
             <AnimatedSection delay={0.15}>
               <div className="editorial-shadow relative aspect-[4/5] overflow-hidden rounded-[32px] border border-charcoal/8">
                 <Image
-                  src="/images/customer-ride.webp"
-                  alt="A Vespa rider in the SKBM showroom"
+                  src="/images/vespa-cafe.webp"
+                  alt="A Vespa parked beside a street café"
                   fill
                   sizes="(max-width: 1024px) 100vw, 48vw"
                   className="object-cover"
@@ -138,7 +138,7 @@ export default function VespaContent() {
             {VESPA_MODELS.map((model, i) => (
               <AnimatedSection key={model.name} delay={i * 0.1}>
                 <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-charcoal/8 bg-white">
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="relative aspect-square overflow-hidden">
                     <Image
                       src={model.image}
                       alt={model.name}

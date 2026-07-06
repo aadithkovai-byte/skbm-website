@@ -87,11 +87,11 @@ export default function ApriliaContent() {
             <AnimatedSection>
               <div className="editorial-shadow relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/8">
                 <Image
-                  src="/images/aprilia-dusk.webp"
-                  alt="A rider with her Aprilia SR at dusk"
+                  src="/images/aprilia-tribute-poster.webp"
+                  alt="Aprilia SR 175 Tribute under studio lights"
                   fill
                   sizes="(max-width: 1024px) 100vw, 48vw"
-                  className="object-cover object-[70%_center]"
+                  className="object-cover object-right"
                 />
               </div>
             </AnimatedSection>
@@ -137,7 +137,7 @@ export default function ApriliaContent() {
             {APRILIA_MODELS.map((model, i) => (
               <AnimatedSection key={model.name} delay={i * 0.12}>
                 <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-white/8 bg-charcoal/50 transition-colors hover:border-aprilia-red/40">
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="relative aspect-square overflow-hidden">
                     <Image
                       src={model.image}
                       alt={model.name}

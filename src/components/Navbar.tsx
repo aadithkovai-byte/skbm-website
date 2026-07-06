@@ -34,7 +34,9 @@ export default function Navbar() {
       <nav className="fixed inset-x-0 top-0 z-50 px-4 py-3 sm:px-6">
         <div className="mx-auto flex max-w-7xl flex-col gap-2">
           <div
-            className={`hidden items-center justify-between px-3 text-[11px] uppercase tracking-[0.3em] text-charcoal/55 transition-all duration-300 md:flex ${
+            className={`hidden items-center justify-between px-3 text-[11px] uppercase tracking-[0.3em] transition-all duration-300 md:flex ${
+              pathname === "/" || pathname === "/aprilia" ? "text-white/55" : "text-charcoal/55"
+            } ${
               scrolled ? "pointer-events-none -translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >

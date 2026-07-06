@@ -12,6 +12,7 @@
   --bronze: #b8874e;
   --bronze-soft: #ddbb8c;
   --vespa-teal: #365f58;
+  --vespa-teal-bright: #2a9d8f;
   --aprilia-red: #d62c34;
   --gray-muted: #6d6256;
   --border-subtle: rgba(20, 18, 16, 0.08);
@@ -30,6 +31,7 @@
   --color-bronze: var(--bronze);
   --color-bronze-soft: var(--bronze-soft);
   --color-vespa-teal: var(--vespa-teal);
+  --color-vespa-teal-bright: var(--vespa-teal-bright);
   --color-aprilia-red: var(--aprilia-red);
   --color-gray-muted: var(--gray-muted);
   --font-sans: var(--font-inter), "Segoe UI", "Helvetica Neue", Arial, sans-serif;

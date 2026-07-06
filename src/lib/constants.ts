@@ -180,6 +180,30 @@ export const APRILIA_MODELS = [
   },
 ];
 
+// Real Google reviews (fetched from the public listing on 2026-07-06; quotes verbatim)
+export const GOOGLE_RATING = "4.4";
+export const GOOGLE_REVIEW_COUNT = "318";
+export const GOOGLE_REVIEWS = [
+  {
+    name: "Bena Yasmine",
+    context: "New Vespa owner",
+    quote:
+      "Harish made the whole buying process smooth, transparent, and stress-free. His professionalism and customer-friendly attitude truly stand out.",
+  },
+  {
+    name: "Shanmugam",
+    context: "Vespa delivery day",
+    quote:
+      "The delivery experience was exceptional — the scooter was beautifully prepared, neatly presented, and handed over on time.",
+  },
+  {
+    name: "Feroz Khan",
+    context: "Aprilia service",
+    quote:
+      "The pick-up and drop-off service was seamless. Thanks to Mr. Vijay and the service team for their support and valuable assistance.",
+  },
+];
+
 // Pre-filled WhatsApp enquiry for a model's on-road price
 export function whatsappPriceLink(model: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

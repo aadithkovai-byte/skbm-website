@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import ServiceForm from "@/components/ServiceForm";
@@ -77,6 +78,36 @@ export default function ServiceContent() {
                     {service.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-gray-muted">{service.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Inside the workshop (real photos) ─── */}
+      <section className="px-4 pb-4 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <AnimatedSection>
+            <p className="section-kicker text-bronze">Inside our workshop</p>
+            <h2 className="mt-5 max-w-2xl font-heading text-4xl tracking-tight text-charcoal sm:text-5xl">
+              Real hands. Real work.
+            </h2>
+          </AnimatedSection>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {[
+              { src: "/images/service-tech-1.webp", alt: "An SKBM technician fitting a new battery" },
+              { src: "/images/service-tech-2.webp", alt: "SKBM technicians working on an Aprilia SR" },
+            ].map((photo, i) => (
+              <AnimatedSection key={photo.src} delay={i * 0.1}>
+                <div className="editorial-shadow relative aspect-[16/10] overflow-hidden rounded-[28px] border border-charcoal/8">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
               </AnimatedSection>
             ))}
