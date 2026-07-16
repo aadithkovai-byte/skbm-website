@@ -135,8 +135,8 @@ export const VESPA_MODELS = [
     description:
       "Classic Vespa proportions with polished city comfort and effortless everyday elegance.",
     image: "/images/poster-vespa-zx.webp",
-    width: 1400,
-    height: 1052,
+    width: 1447,
+    height: 1087,
   },
   {
     name: "Vespa",
@@ -192,8 +192,8 @@ export const APRILIA_MODELS = [
     description:
       "The SR 175 dressed in Aprilia's racing livery — for riders who want the paddock look every day.",
     image: "/images/poster-aprilia-tribute.webp",
-    width: 1400,
-    height: 934,
+    width: 1535,
+    height: 1024,
   },
 ];
 
