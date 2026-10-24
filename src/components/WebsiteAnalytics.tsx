@@ -5,6 +5,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { MAPS_SULUR, MAPS_SUNGAM } from "@/lib/constants";
+import { META_PIXEL_ID, getMarketingConsent, setMarketingConsent } from "@/lib/meta-pixel";
 import {
   GA_MEASUREMENT_ID,
   analyticsEnabled,
@@ -21,9 +22,16 @@ const getServerConsent = () => null;
 
 export default function WebsiteAnalytics() {
   const consent = useSyncExternalStore(subscribeToConsent, getAnalyticsConsent, getServerConsent);
+  const marketingConsent = useSyncExternalStore(subscribeToConsent, getMarketingConsent, getServerConsent);
   const pathname = usePathname();
   const previousPage = useRef("");
   const [preferencesOpen, setPreferencesOpen] = useState(false);
+
+  function saveChoices(analytics: boolean, marketing: boolean) {
+    setAnalyticsConsent(analytics ? "accepted" : "declined");
+    setMarketingConsent(marketing ? "accepted" : "declined");
+    setPreferencesOpen(false);
+  }
 
   useEffect(() => {
     if (consent !== "accepted") {
@@ -87,33 +95,51 @@ export default function WebsiteAnalytics() {
       >
         Cookie preferences
       </button>
-      {(consent === null || preferencesOpen) && (
+      {(consent === null || (META_PIXEL_ID && marketingConsent === null) || preferencesOpen) && (
         <section
-          aria-label="Analytics cookie preferences"
+          aria-label="Cookie preferences"
           className="fixed inset-x-3 bottom-12 z-[70] mx-auto max-w-xl rounded-2xl border border-bronze/40 bg-cream p-5 text-charcoal shadow-xl sm:inset-x-auto sm:left-5 sm:bottom-14"
         >
           <h2 className="font-heading text-xl">A better visit, with your permission.</h2>
           <p className="mt-2 text-sm leading-6">
-            Optional Google Analytics cookies help us understand visits and enquiry clicks.
-            Your form details and WhatsApp messages are excluded. You can change your choice here anytime.
+            Choose which optional cookies we may use. You can change your choice here anytime.
             {" "}<Link href="/privacy" className="underline underline-offset-2">Privacy details</Link>
           </p>
-          <div className="mt-4 flex flex-wrap gap-3">
+          <form
+            key={`${consent}-${marketingConsent}`}
+            className="mt-4 space-y-4"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const choices = new FormData(event.currentTarget);
+              saveChoices(choices.has("analytics"), choices.has("marketing"));
+            }}
+          >
+            <label className="flex items-start gap-3 text-sm leading-6">
+              <input type="checkbox" name="analytics" defaultChecked={consent === "accepted"} className="mt-1 h-4 w-4 accent-[#b8874e]" />
+              <span><span className="font-semibold">Google Analytics.</span> Understand visits, traffic sources and enquiry clicks. Form details and message text are excluded.</span>
+            </label>
+            {META_PIXEL_ID && (
+              <label className="flex items-start gap-3 text-sm leading-6">
+                <input type="checkbox" name="marketing" defaultChecked={marketingConsent === "accepted"} className="mt-1 h-4 w-4 accent-[#b8874e]" />
+                <span><span className="font-semibold">Meta marketing.</span> Share website visits and enquiry actions with Meta to measure and improve Facebook and Instagram ads.</span>
+              </label>
+            )}
+          <div className="flex flex-wrap gap-3">
             <button
-              type="button"
-              onClick={() => { setAnalyticsConsent("accepted"); setPreferencesOpen(false); }}
+              type="submit"
               className="rounded-full border border-charcoal bg-charcoal px-5 py-2 text-sm text-cream"
             >
-              Allow analytics
+              Save choices
             </button>
             <button
               type="button"
-              onClick={() => { setAnalyticsConsent("declined"); setPreferencesOpen(false); }}
+              onClick={() => saveChoices(false, false)}
               className="rounded-full border border-charcoal px-5 py-2 text-sm text-charcoal"
             >
-              Decline analytics
+              Decline optional cookies
             </button>
           </div>
+          </form>
         </section>
       )}
     </>

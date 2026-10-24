@@ -23,6 +23,7 @@ test("sends nothing before consent, after decline, or from development/preview h
   let hostname = "www.skbm.in";
   const calls = [];
   const mockWindow = {
+    dispatchEvent: () => true,
     location: { get hostname() { return hostname; }, href: "https://www.skbm.in/contact?name=Private" },
     gtag: (...args) => calls.push(args),
   };
@@ -43,6 +44,7 @@ test("sends nothing before consent, after decline, or from development/preview h
 
 test("initializes once and sends a consented enquiry to the correct property with a clean URL", () => {
   const mockWindow = {
+    dispatchEvent: () => true,
     location: { hostname: "www.skbm.in", href: "https://www.skbm.in/contact?name=Private&utm_source=instagram" },
     dataLayer: [],
   };

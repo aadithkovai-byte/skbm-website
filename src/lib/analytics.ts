@@ -2,6 +2,7 @@
 export const GA_MEASUREMENT_ID = "G-LCFY1317Z2";
 export const CONSENT_KEY = "skbm-analytics-consent-v1";
 export const CONSENT_EVENT = "skbm-analytics-consent";
+export const ENQUIRY_EVENT = "skbm-website-enquiry";
 
 export type AnalyticsConsent = "accepted" | "declined" | null;
 export type EnquiryEvent =
@@ -124,6 +125,9 @@ export function initializeAnalytics() {
 }
 
 export function trackEnquiry(event: EnquiryEvent, details: { model?: string; showroom?: string; channel?: string } = {}) {
+  if (typeof window === "undefined") return;
+  // Each destination checks its own consent. Analytics permission never grants marketing permission.
+  window.dispatchEvent(new CustomEvent(ENQUIRY_EVENT, { detail: { name: event, details } }));
   if (!analyticsEnabled()) return;
   initializeAnalytics();
   window.gtag?.("event", event, {

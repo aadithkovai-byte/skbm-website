@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageTransition from "@/components/PageTransition";
 import WebsiteAnalytics from "@/components/WebsiteAnalytics";
+import MetaPixel from "@/components/MetaPixel";
 import {
   PHONE_PRIMARY,
   PHONE_SECONDARY,
@@ -161,6 +162,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <WebsiteAnalytics />
+        <MetaPixel />
       </body>
     </html>
   );
