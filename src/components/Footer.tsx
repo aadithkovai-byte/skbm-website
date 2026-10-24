@@ -123,6 +123,9 @@ export default function Footer() {
                 <Link href="/about" className="block text-sm text-white/58 hover:text-white">
                   About
                 </Link>
+                <Link href="/privacy" className="block text-sm text-white/58 hover:text-white">
+                  Privacy
+                </Link>
               </div>
             </div>
 

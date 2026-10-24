@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { trackEnquiry } from "@/lib/analytics";
 import {
   APRILIA_MODELS,
   SHOWROOMS,
@@ -23,6 +24,10 @@ export default function TestRideForm() {
       `Test Ride Request\n\nName: ${formData.name}\nBike: ${formData.model}\nShowroom: ${formData.showroom}\nPreferred day: ${formData.day || "Flexible"}`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    trackEnquiry("test_ride_handoff", {
+      model: [...VESPA_MODELS, ...APRILIA_MODELS].some((model) => model.name === formData.model) ? formData.model : "undecided",
+      showroom: formData.showroom.startsWith("Sungam") ? "sungam" : "sulur",
+    });
     setSubmitted(true);
   }
 
@@ -34,10 +39,10 @@ export default function TestRideForm() {
             <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h3 className="mb-2 font-heading text-2xl font-semibold text-charcoal">Request sent</h3>
+        <h3 className="mb-2 font-heading text-2xl font-semibold text-charcoal">Finish in WhatsApp</h3>
         <p className="max-w-sm text-gray-muted">
-          Your test ride request is on its way to our WhatsApp. We&apos;ll confirm
-          your slot shortly.
+          Press send in WhatsApp to share your test ride request. Your slot is
+          confirmed only after our team replies.
         </p>
         <button
           onClick={() => setSubmitted(false)}

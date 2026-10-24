@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { trackEnquiry } from "@/lib/analytics";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export default function ServiceForm() {
@@ -15,11 +16,12 @@ export default function ServiceForm() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const message = `Service Booking Request%0A%0AName: ${formData.name}%0APhone: ${formData.phone}%0AVehicle: ${formData.vehicle}%0ARegistration: ${formData.registration}%0APreferred Date: ${formData.date}`;
+    const message = encodeURIComponent(`Service Booking Request\n\nName: ${formData.name}\nPhone: ${formData.phone}\nVehicle: ${formData.vehicle}\nRegistration: ${formData.registration}\nPreferred Date: ${formData.date}`);
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
       "_blank"
     );
+    trackEnquiry("service_handoff");
     setSubmitted(true);
   }
 
@@ -31,9 +33,9 @@ export default function ServiceForm() {
             <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h3 className="mb-2 text-2xl font-semibold">Booking Sent</h3>
+        <h3 className="mb-2 text-2xl font-semibold">Finish in WhatsApp</h3>
         <p className="text-gray-muted">
-          Your service request has been sent via WhatsApp. We&apos;ll confirm your appointment shortly.
+          Press send in WhatsApp to share your service request. Your appointment is confirmed only after our team replies.
         </p>
         <button
           onClick={() => setSubmitted(false)}

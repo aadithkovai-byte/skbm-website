@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageTransition from "@/components/PageTransition";
+import WebsiteAnalytics from "@/components/WebsiteAnalytics";
 import {
   PHONE_PRIMARY,
   PHONE_SECONDARY,
@@ -159,6 +160,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        <WebsiteAnalytics />
       </body>
     </html>
   );
